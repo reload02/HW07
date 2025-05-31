@@ -4,13 +4,13 @@ in vec3 fragNormal;
 out vec4 FragColor;
 uniform vec3 lightPos;
 uniform vec3 viewPos;
+uniform vec3 ka;
+uniform vec3 kd;
+uniform vec3 ks;
+uniform float p;
+uniform float Ia;
+uniform vec3 lightColor;
 void main() {
-    vec3 ka = vec3(0.0, 1.0, 0.0);
-    vec3 kd = vec3(0.0, 0.5, 0.0);
-    vec3 ks = vec3(0.5);
-    float p = 32.0;
-    float Ia = 0.2;
-    vec3 lightColor = vec3(1.0);
 
     vec3 norm = normalize(fragNormal);
     vec3 lightDir = normalize(lightPos - fragPos);

@@ -144,6 +144,14 @@ void display() {
 
     mat4 modeling_inv_tr = transpose(inverse(modeling));
 
+    glUniform3f(glGetUniformLocation(shaderProgram, "ka"), 0.0f, 1.0f, 0.0f);
+    glUniform3f(glGetUniformLocation(shaderProgram, "kd"), 0.0f, 0.5f, 0.0f);
+    glUniform3f(glGetUniformLocation(shaderProgram, "ks"), 0.5f, 0.5f, 0.5f);
+    glUniform1f(glGetUniformLocation(shaderProgram, "p"), 32.0f);
+    glUniform1f(glGetUniformLocation(shaderProgram, "Ia"), 0.2f);
+    glUniform3f(glGetUniformLocation(shaderProgram, "lightColor"), 1.0f, 1.0f, 1.0f);
+
+
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "modeling"), 1, GL_FALSE, value_ptr(modeling));
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "camera"), 1, GL_FALSE, value_ptr(view));
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "projection"), 1, GL_FALSE, value_ptr(projection));
